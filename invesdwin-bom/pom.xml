@@ -46,7 +46,7 @@
 		<version.commons-math3>3.6.1</version.commons-math3>
 		<version.commons-lang3>3.12.0</version.commons-lang3>
 		<version.commons-beanutils>1.9.4</version.commons-beanutils>
-		<version.commons-fileupload>1.4</version.commons-fileupload>
+		<version.commons-fileupload>1.5</version.commons-fileupload>
 		<version.commons-text>1.10.0</version.commons-text>
 		<version.httpclient>4.5.13</version.httpclient>
 		<version.httpclient5>5.2</version.httpclient5>
