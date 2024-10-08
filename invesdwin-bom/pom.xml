@@ -17,7 +17,7 @@
 		<version.j2objc-annotations>3.0.0</version.j2objc-annotations>
 		<version.error_prone_annotations>2.26.1</version.error_prone_annotations>
 		<version.gson>2.10.1</version.gson>
-		<version.protobuf>3.21.9</version.protobuf>
+		<version.protobuf>3.25.5</version.protobuf>
 		<version.assertj-guava>3.26.3</version.assertj-guava>
 		<version.assertj-core>3.26.3</version.assertj-core>
 		<version.assertj-joda-time>2.2.0</version.assertj-joda-time>
