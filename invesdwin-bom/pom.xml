@@ -2326,6 +2326,7 @@
 							<param>
 								com\.googlecode\.efficient-java-matrix-library:ejml.*</param>
 							<param>cz\.cvut\.fit\.jcool:jcool.*</param>
+							<param>net\.sf\.sevenzipjbinding:sevenzipjbinding.*</param>
 							<!-- zlib -->
 							<param>com\.github\.mrj0:jep.*</param>
 							<!-- CPL -->
