@@ -37,18 +37,18 @@
 		<version.minlog-slf4j>2.0</version.minlog-slf4j>
 		<version.janino>3.1.9</version.janino>
 		<version.joda-time>2.14.0</version.joda-time>
-		<version.commons-codec>1.16.1</version.commons-codec>
+		<version.commons-codec>1.19.0</version.commons-codec>
 		<version.commons-cli>1.5.0</version.commons-cli>
 		<version.commons-lang>2.6</version.commons-lang>
-		<version.commons-io>2.16.1</version.commons-io>
-		<version.curvesapi>1.06</version.curvesapi>
+		<version.commons-io>2.20.0</version.commons-io>
+		<version.curvesapi>1.08</version.curvesapi>
 		<version.t-digest>3.4-inv</version.t-digest>
 		<version.commons-collections>3.2.2</version.commons-collections>
 		<version.commons-collections4>4.4</version.commons-collections4>
 		<version.commons-pool>1.6</version.commons-pool>
 		<version.commons-pool2>2.11.1</version.commons-pool2>
 		<version.commons-math3>3.6.1</version.commons-math3>
-		<version.commons-lang3>3.17.0</version.commons-lang3>
+		<version.commons-lang3>3.19.0</version.commons-lang3>
 		<version.commons-beanutils>1.9.4</version.commons-beanutils>
 		<version.commons-fileupload>1.5</version.commons-fileupload>
 		<version.commons-text>1.12.0</version.commons-text>
@@ -170,7 +170,8 @@
 		<version.flatlaf>3.1</version.flatlaf>
 		<version.mina>2.2.3</version.mina>
 		<version.javacpp>1.5.10</version.javacpp>
-		<maven.javadoc.skip>true</maven.javadoc.skip>
+		<version.poi>5.4.1</version.poi>
+		<version.tika>3.2.3</version.tika>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -1948,6 +1949,55 @@
 				<groupId>org.bytedeco</groupId>
 				<artifactId>systems-platform</artifactId>
 				<version>${version.javacpp}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.tika</groupId>
+			    <artifactId>tika-core</artifactId>
+			    <version>${version.tika}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.tika</groupId>
+			    <artifactId>tika-parsers-standard-package</artifactId>
+			    <version>${version.tika}</version>
+			    <exclusions>
+			    	<exclusion>
+			    		<groupId>commons-logging</groupId>
+			    		<artifactId>commons-logging</artifactId>
+			    	</exclusion>
+			    </exclusions>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.tika</groupId>
+			    <artifactId>tika-parser-microsoft-module</artifactId>
+			    <version>${version.tika}</version>
+			    <exclusions>
+			    	<exclusion>
+			    		<groupId>commons-logging</groupId>
+			    		<artifactId>commons-logging</artifactId>
+			    	</exclusion>
+			    </exclusions>
+			</dependency>
+            <dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${version.poi}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.logging.log4j</groupId>
+						<artifactId>log4j-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${version.poi}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.apache.logging.log4j</groupId>
+						<artifactId>log4j-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
