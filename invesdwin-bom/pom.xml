@@ -2349,6 +2349,7 @@
 							<param>com\.jcabi:jcabi-aether.*</param>
 							<param>net\.sf\.py4j:py4j.*</param>
 							<param>com\.diffplug\.matsim:matconsolectl.*</param>
+							<param>com\.diffplug\.matsim:matlabcontrol.*</param>
 							<param>com\.yahoo\.platform\.yui:yuicompressor.*</param>
 							<param>org\.hsqldb:hsqldb.*</param>
 							<param>com\.github\.virtuald:curvesapi.*</param>
