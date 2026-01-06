@@ -160,7 +160,7 @@
 		<version.agrona>1.21.1</version.agrona>
 		<version.arrow>13.0.0</version.arrow>
 		<version.burningwave-core>12.62.0</version.burningwave-core>
-		<version.jna>5.17.0</version.jna>
+		<version.jna>5.18.1</version.jna>
 		<version.jnr-constants>0.10.4</version.jnr-constants>
 		<version.jnr-ffi>2.2.17</version.jnr-ffi>
 		<version.jffi>1.3.13</version.jffi>
