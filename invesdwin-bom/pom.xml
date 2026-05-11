@@ -172,6 +172,7 @@
 		<version.javacpp>1.5.10</version.javacpp>
 		<version.poi>5.4.1</version.poi>
 		<version.tika>3.2.3</version.tika>
+		<version.jgit>7.6.0.202603022253-r</version.jgit>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -1393,9 +1394,9 @@
 				<version>${version.glassfish-jaxb}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.eclipse.angus</groupId>
-			    <artifactId>angus-activation</artifactId>
-			    <version>${version.angus-activation}</version>
+				<groupId>org.eclipse.angus</groupId>
+				<artifactId>angus-activation</artifactId>
+				<version>${version.angus-activation}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jaxb</groupId>
@@ -1630,9 +1631,9 @@
 				<version>${version.plexus-container-default}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.codehaus.plexus</groupId>
-			    <artifactId>plexus-interpolation</artifactId>
-			    <version>${version.plexus-interpolation}</version>
+				<groupId>org.codehaus.plexus</groupId>
+				<artifactId>plexus-interpolation</artifactId>
+				<version>${version.plexus-interpolation}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.codehaus.plexus</groupId>
@@ -1982,33 +1983,33 @@
 				<version>${version.javacpp}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.apache.tika</groupId>
-			    <artifactId>tika-core</artifactId>
-			    <version>${version.tika}</version>
+				<groupId>org.apache.tika</groupId>
+				<artifactId>tika-core</artifactId>
+				<version>${version.tika}</version>
 			</dependency>
 			<dependency>
-			    <groupId>org.apache.tika</groupId>
-			    <artifactId>tika-parsers-standard-package</artifactId>
-			    <version>${version.tika}</version>
-			    <exclusions>
-			    	<exclusion>
-			    		<groupId>commons-logging</groupId>
-			    		<artifactId>commons-logging</artifactId>
-			    	</exclusion>
-			    </exclusions>
+				<groupId>org.apache.tika</groupId>
+				<artifactId>tika-parsers-standard-package</artifactId>
+				<version>${version.tika}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
-			    <groupId>org.apache.tika</groupId>
-			    <artifactId>tika-parser-microsoft-module</artifactId>
-			    <version>${version.tika}</version>
-			    <exclusions>
-			    	<exclusion>
-			    		<groupId>commons-logging</groupId>
-			    		<artifactId>commons-logging</artifactId>
-			    	</exclusion>
-			    </exclusions>
+				<groupId>org.apache.tika</groupId>
+				<artifactId>tika-parser-microsoft-module</artifactId>
+				<version>${version.tika}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
-            <dependency>
+			<dependency>
 				<groupId>org.apache.poi</groupId>
 				<artifactId>poi</artifactId>
 				<version>${version.poi}</version>
@@ -2029,6 +2030,11 @@
 						<artifactId>log4j-api</artifactId>
 					</exclusion>
 				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.jgit</groupId>
+				<artifactId>org.eclipse.jgit</artifactId>
+				<version>${version.jgit}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
