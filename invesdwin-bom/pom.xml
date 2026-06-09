@@ -2602,6 +2602,7 @@
 							are disabled by default here. -->
 						<enableAssertions>false</enableAssertions>
 						<argLine>-Xmx2g</argLine>
+						<useManifestOnlyJar>false</useManifestOnlyJar>
 					</configuration>
 				</plugin>
 				<plugin>
