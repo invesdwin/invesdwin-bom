@@ -29,8 +29,8 @@
 		<version.javassist>3.30.2-GA</version.javassist>
 		<version.jsr305>3.0.2</version.jsr305>
 		<version.slf4j>2.0.17</version.slf4j>
-		<version.log4j>2.24.3</version.log4j>
-		<version.log4j-to-slf4j>2.24.3</version.log4j-to-slf4j>
+		<version.log4j>2.26.0</version.log4j>
+		<version.commons-logging>1.4.0</version.commons-logging>
 		<version.minlog-slf4j>2.0</version.minlog-slf4j>
 		<version.janino>3.1.9</version.janino>
 		<version.joda-time>2.14.0</version.joda-time>
@@ -147,6 +147,7 @@
 		<version.exec-maven-plugin>3.6.3</version.exec-maven-plugin>
 		<version.nar-maven-plugin>3.10.1</version.nar-maven-plugin>
 		<version.os-maven-plugin>1.7.1</version.os-maven-plugin>
+		<version.log4j-transform-maven-plugin>0.2.0</version.log4j-transform-maven-plugin>
 		<version.jetty>11.0.17</version.jetty>
 		<version.netty>4.1.100.Final</version.netty>
 		<version.netty-io_uring>0.0.21.Final</version.netty-io_uring>
@@ -202,8 +203,8 @@
 				<version>${version.spring}</version>
 				<exclusions>
 					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-jcl</artifactId>
 					</exclusion>
 				</exclusions>
 			</dependency>
@@ -211,12 +212,6 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jcl</artifactId>
 				<version>${version.spring}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -527,12 +522,6 @@
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
 				<version>${version.commons-beanutils}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>commons-logging</artifactId>
-						<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>com.google.code.findbugs</groupId>
@@ -576,29 +565,39 @@
 				</exclusions>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>log4j-over-slf4j</artifactId>
-				<version>${version.slf4j}</version>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-1.2-api</artifactId>
+				<version>${version.log4j}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>log4j-to-slf4j</artifactId>
-				<version>${version.log4j-to-slf4j}</version>
+				<artifactId>log4j-slf4j2-impl</artifactId>
+				<version>${version.log4j}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jul-to-slf4j</artifactId>
-				<version>${version.slf4j}</version>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${version.log4j}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-simple</artifactId>
-				<version>${version.slf4j}</version>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${version.log4j}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-jcl</artifactId>
+				<version>${version.log4j}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${version.commons-logging}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-jul</artifactId>
+				<version>${version.log4j}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.dorkbox</groupId>
@@ -1453,12 +1452,12 @@
 						<artifactId>logback-classic</artifactId>
 					</exclusion>
 					<exclusion>
-						<groupId>commons-collections</groupId>
-						<artifactId>commons-collections</artifactId>
+						<groupId>ch.qos.logback</groupId>
+						<artifactId>logback-core</artifactId>
 					</exclusion>
 					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
+						<groupId>commons-collections</groupId>
+						<artifactId>commons-collections</artifactId>
 					</exclusion>
 					<exclusion>
 						<groupId>commons-configuration</groupId>
@@ -1488,12 +1487,6 @@
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
 				<version>${version.httpclient}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>commons-logging</artifactId>
-						<groupId>commons-logging</groupId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents.client5</groupId>
@@ -1991,23 +1984,11 @@
 				<groupId>org.apache.tika</groupId>
 				<artifactId>tika-parsers-standard-package</artifactId>
 				<version>${version.tika}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tika</groupId>
 				<artifactId>tika-parser-microsoft-module</artifactId>
 				<version>${version.tika}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.poi</groupId>
@@ -2078,7 +2059,6 @@
 							</requireMavenVersion>
 							<bannedDependencies>
 								<excludes>
-									<exclude>commons-logging:commons-logging</exclude>
 									<exclude>org.aspectj:aspectjrt</exclude>
 									<exclude>javax.servlet:servlet-api</exclude>
 									<exclude>javax.xml.soap:javax.xml.soap-api</exclude>
@@ -2088,7 +2068,6 @@
 										org.eclipse.jetty.websocket:websocket-client</exclude>
 									<exclude>
 										org.apache.geronimo.specs:geronimo-jaxb_2.1_spec</exclude>
-									<exclude>commons-logging:commons-logging-api</exclude>
 									<exclude>javax.persistence:persistence-api</exclude>
 									<exclude>
 										javax.persistence:javax.persistence-api</exclude>
@@ -2098,8 +2077,6 @@
 									<exclude>com.sun.xml.bind:jaxb-impl</exclude>
 									<exclude>log4j:log4j</exclude>
 									<exclude>ch.qos.reload4j:reload4j</exclude>
-									<exclude>org.apache.logging.log4j:log4j-core</exclude>
-									<exclude>org.apache.logging.log4j:log4j-jcl</exclude>
 									<exclude>org.slf4j:slf4j-log4j12</exclude>
 									<exclude>com.esotericsoftware:minlog</exclude>
 									<exclude>javax.servlet.jsp:jsp-api</exclude>
@@ -2217,6 +2194,38 @@
 									analytics which we don't 
 										want -->
 									<exclude>net.openhft:chronicle-analytics</exclude>
+									<!-- use
+									org.apache.logging.log4j:log4j-slf4j2-impl
+									instead-->
+									<exclude>
+										org.apache.logging.log4j:log4j-to-slf4j</exclude>
+									<!-- use
+									org.apache.logging.log4j:log4j-api
+									instead-->
+									<exclude>org.slf4j:slf4j-simple</exclude>
+									<!-- use org.apache.logging.log4j:log4j-jul
+									instead -->
+									<exclude>org.slf4j:jul-to-slf4j</exclude>
+									<!-- use
+									org.apache.logging.log4j:log4j-1.2-api
+									instead -->
+									<exclude>org.slf4j:log4j-over-slf4j</exclude>
+									<!-- use
+									org.springframework:spring-boot-starter-log4j2
+									instead -->
+									<exclude>
+										org.springframework:spring-boot-starter-logging</exclude>
+									<!-- use commons-logging:commons-logging
+									instead-->
+									<exclude>org.springframework:spring-jcl</exclude>
+									<!-- use commons-logging:commons-logging
+									instead-->
+									<exclude>org.slf4j:jcl-over-slf4j</exclude>
+									<!-- use
+									org.apache.logging.log4j:log4j-slf4j2-impl
+									instead -->
+									<exclude>ch.qos.logback:logback-classic</exclude>
+									<exclude>ch.qos.logback:logback-core</exclude>
 								</excludes>
 							</bannedDependencies>
 							<requireUpperBoundDeps>
@@ -2227,7 +2236,6 @@
 									<exclude>javax.enterprise:cdi-api</exclude>
 									<exclude>org.osgi:org.osgi.core</exclude>
 									<exclude>log4j:log4j</exclude>
-									<exclude>commons-logging:commons-logging</exclude>
 									<exclude>
 										com.google.code.findbugs:annotations</exclude>
 								</excludes>
@@ -2626,6 +2634,18 @@
 					<version>${nar-maven-plugin}</version>
 					<extensions>true</extensions>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-transform-maven-plugin</artifactId>
+					<version>${version.log4j-transform-maven-plugin}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>process-classes</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -2644,6 +2664,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-transform-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 		<extensions>
