@@ -147,6 +147,7 @@
 		<version.exec-maven-plugin>3.6.3</version.exec-maven-plugin>
 		<version.nar-maven-plugin>3.10.1</version.nar-maven-plugin>
 		<version.os-maven-plugin>1.7.1</version.os-maven-plugin>
+		<version.log4j-transform-maven-plugin>0.2.0</version.log4j-transform-maven-plugin>
 		<version.jetty>11.0.17</version.jetty>
 		<version.netty>4.1.100.Final</version.netty>
 		<version.netty-io_uring>0.0.21.Final</version.netty-io_uring>
@@ -2220,7 +2221,9 @@
 									<!-- use commons-logging:commons-logging
 									instead-->
 									<exclude>org.slf4j:jcl-over-slf4j</exclude>
-									<!-- use org.apache.logging.log4j:log4j-slf4j2-impl instead -->
+									<!-- use
+									org.apache.logging.log4j:log4j-slf4j2-impl
+									instead -->
 									<exclude>ch.qos.logback:logback-classic</exclude>
 									<exclude>ch.qos.logback:logback-core</exclude>
 								</excludes>
@@ -2631,6 +2634,18 @@
 					<version>${nar-maven-plugin}</version>
 					<extensions>true</extensions>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.logging.log4j</groupId>
+					<artifactId>log4j-transform-maven-plugin</artifactId>
+					<version>${version.log4j-transform-maven-plugin}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>process-classes</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -2649,6 +2664,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-transform-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 		<extensions>
