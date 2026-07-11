@@ -28,7 +28,7 @@
 		<version.micrometer>1.16.1</version.micrometer>
 		<version.javassist>3.30.2-GA</version.javassist>
 		<version.jsr305>3.0.2</version.jsr305>
-		<version.slf4j>2.0.17</version.slf4j>
+		<version.slf4j>2.0.18</version.slf4j>
 		<version.log4j>2.26.0</version.log4j>
 		<version.commons-logging>1.4.0</version.commons-logging>
 		<version.minlog-slf4j>2.0</version.minlog-slf4j>
@@ -62,8 +62,8 @@
 		<version.jakarta-servlet>6.0.0</version.jakarta-servlet>
 		<version.jakarta.mail-api>2.1.5</version.jakarta.mail-api>
 		<version.jakarta.mail>2.0.2</version.jakarta.mail>
-		<version.jackson>2.20.1</version.jackson>
-		<version.jackson-annotations>2.20</version.jackson-annotations>
+		<version.jackson>2.22.1</version.jackson>
+		<version.jackson-annotations>2.22</version.jackson-annotations>
 		<version.jettison>1.5.4</version.jettison>
 		<version.jsoup>1.15.3</version.jsoup>
 		<version.args4j>2.33</version.args4j>
@@ -71,7 +71,7 @@
 		<version.jquery>3.6.1</version.jquery>
 		<version.jdk-serializable-functional>1.9.0</version.jdk-serializable-functional>
 		<version.openjson>1.0.13</version.openjson>
-		<version.woodstox>7.1.1</version.woodstox>
+		<version.woodstox>7.2.0</version.woodstox>
 		<version.xstream>1.4.20</version.xstream>
 		<version.jclipboardhelper>0.1.2</version.jclipboardhelper>
 		<version.istack>4.2.0</version.istack>
