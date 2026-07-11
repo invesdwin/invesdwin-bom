@@ -169,7 +169,7 @@
 		<version.jfilechooser-bookmarks>0.1.9</version.jfilechooser-bookmarks>
 		<version.flatlaf>3.1</version.flatlaf>
 		<version.mina>2.2.3</version.mina>
-		<version.javacpp>1.5.10</version.javacpp>
+		<version.javacpp>1.5.13</version.javacpp>
 		<version.poi>5.4.1</version.poi>
 		<version.tika>3.2.3</version.tika>
 		<version.jgit>7.6.0.202603022253-r</version.jgit>
