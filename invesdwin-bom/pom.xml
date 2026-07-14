@@ -17,7 +17,7 @@
 		<version.j2objc-annotations>3.1</version.j2objc-annotations>
 		<version.error_prone_annotations>2.45.0</version.error_prone_annotations>
 		<version.gson>2.13.2</version.gson>
-		<version.protobuf>3.21.9</version.protobuf>
+		<version.protobuf>4.33.0</version.protobuf>
 		<version.assertj>3.27.6</version.assertj>
 		<version.assertj-joda-time>2.2.0</version.assertj-joda-time>
 		<version.spring>6.2.15</version.spring>
@@ -34,10 +34,10 @@
 		<version.minlog-slf4j>2.0</version.minlog-slf4j>
 		<version.janino>3.1.9</version.janino>
 		<version.joda-time>2.14.0</version.joda-time>
-		<version.commons-codec>1.21.0</version.commons-codec>
+		<version.commons-codec>1.22.0</version.commons-codec>
 		<version.commons-cli>1.5.0</version.commons-cli>
 		<version.commons-lang>2.6</version.commons-lang>
-		<version.commons-io>2.20.0</version.commons-io>
+		<version.commons-io>2.22.0</version.commons-io>
 		<version.curvesapi>1.08</version.curvesapi>
 		<version.t-digest>3.4-inv</version.t-digest>
 		<version.commons-collections>3.2.2</version.commons-collections>
@@ -103,7 +103,7 @@
 		<version.junit>6.0.2</version.junit>
 		<version.mockito>4.9.0</version.mockito>
 		<version.byte-buddy>1.18.2</version.byte-buddy>
-		<version.objenesis>3.3</version.objenesis>
+		<version.objenesis>3.5</version.objenesis>
 		<version.ow2asm>9.9.1</version.ow2asm>
 		<version.asm>3.3.1</version.asm>
 		<version.zt-exec>1.11</version.zt-exec>
@@ -115,7 +115,7 @@
 		<version.jctools>4.0.5</version.jctools>
 		<version.jamm>0.3.3</version.jamm>
 		<version.groovy>4.0.15</version.groovy>
-		<version.scala>2.13.12</version.scala>
+		<version.scala>2.13.18</version.scala>
 		<version.kotlin>2.2.0</version.kotlin>
 		<version.clojure>1.11.2</version.clojure>
 		<version.jruby>9.4.5.0</version.jruby>
@@ -148,7 +148,7 @@
 		<version.nar-maven-plugin>3.10.1</version.nar-maven-plugin>
 		<version.os-maven-plugin>1.7.1</version.os-maven-plugin>
 		<version.jetty>11.0.17</version.jetty>
-		<version.netty>4.1.100.Final</version.netty>
+		<version.netty>4.2.12.Final</version.netty>
 		<version.netty-io_uring>0.0.21.Final</version.netty-io_uring>
 		<version.netty-tcnative>2.0.61.Final</version.netty-tcnative>
 		<version.chronicle-algorithms>2026.2</version.chronicle-algorithms>
@@ -684,6 +684,11 @@
 				<version>${version.jackson}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.fasterxml.jackson.module</groupId>
+				<artifactId>jackson-module-scala_2.13</artifactId>
+				<version>${version.jackson}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-stdlib</artifactId>
 				<version>${version.kotlin}</version>
@@ -736,6 +741,11 @@
 			<dependency>
 				<groupId>org.scala-lang</groupId>
 				<artifactId>scala-compiler</artifactId>
+				<version>${version.scala}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.scala-lang</groupId>
+				<artifactId>scala-reflect</artifactId>
 				<version>${version.scala}</version>
 			</dependency>
 			<dependency>
