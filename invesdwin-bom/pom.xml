@@ -156,8 +156,8 @@
 		<version.chronicle-core>2026.3</version.chronicle-core>
 		<version.chronicle-posix>2026.2</version.chronicle-posix>
 		<version.jetbrains-annotations>26.0.2</version.jetbrains-annotations>
-		<version.agrona>2.4.0</version.agrona>
-		<version.arrow>13.0.0</version.arrow>
+		<version.agrona>2.5.0</version.agrona>
+		<version.arrow>19.0.0</version.arrow>
 		<version.burningwave-core>12.66.2</version.burningwave-core>
 		<version.jna>5.18.1</version.jna>
 		<version.jnr-constants>0.10.4</version.jnr-constants>
