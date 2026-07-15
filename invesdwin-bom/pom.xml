@@ -72,7 +72,7 @@
 		<version.jdk-serializable-functional>1.9.0</version.jdk-serializable-functional>
 		<version.openjson>1.0.13</version.openjson>
 		<version.woodstox>7.2.0</version.woodstox>
-		<version.xstream>1.4.20</version.xstream>
+		<version.xstream>1.4.21</version.xstream>
 		<version.jclipboardhelper>0.1.2</version.jclipboardhelper>
 		<version.istack>4.2.0</version.istack>
 		<version.xerces>2.12.2</version.xerces>
