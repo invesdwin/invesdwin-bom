@@ -147,8 +147,8 @@
 		<version.exec-maven-plugin>3.6.3</version.exec-maven-plugin>
 		<version.nar-maven-plugin>3.10.1</version.nar-maven-plugin>
 		<version.os-maven-plugin>1.7.1</version.os-maven-plugin>
-		<version.jetty>11.0.17</version.jetty>
-		<version.netty>4.2.12.Final</version.netty>
+		<version.jetty>11.0.26</version.jetty>
+		<version.netty>4.2.13.Final</version.netty>
 		<version.netty-io_uring>0.0.21.Final</version.netty-io_uring>
 		<version.netty-tcnative>2.0.61.Final</version.netty-tcnative>
 		<version.chronicle-algorithms>2026.2</version.chronicle-algorithms>
@@ -872,6 +872,18 @@
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
 				<artifactId>wicket-core</artifactId>
+				<version>${version.wicket}</version>
+				<exclusions>
+					<exclusion>
+						<!-- upperbound deps -->
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.wicket</groupId>
+				<artifactId>wicket-mount-core</artifactId>
 				<version>${version.wicket}</version>
 				<exclusions>
 					<exclusion>
