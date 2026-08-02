@@ -173,6 +173,8 @@
 		<version.poi>5.4.1</version.poi>
 		<version.tika>3.2.3</version.tika>
 		<version.jgit>7.6.0.202603022253-r</version.jgit>
+		<version.snakeyaml>2.6</version.snakeyaml>
+		<version.micronaut>3.10.10</version.micronaut>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -2037,6 +2039,16 @@
 				<groupId>org.eclipse.jgit</groupId>
 				<artifactId>org.eclipse.jgit</artifactId>
 				<version>${version.jgit}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.yaml</groupId>
+				<artifactId>snakeyaml</artifactId>
+				<version>${version.snakeyaml}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micronaut</groupId>
+				<artifactId>micronaut-http-client</artifactId>
+				<version>${vveresion.micronaut}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
