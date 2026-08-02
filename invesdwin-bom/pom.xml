@@ -32,7 +32,7 @@
 		<version.log4j>2.26.0</version.log4j>
 		<version.commons-logging>1.4.0</version.commons-logging>
 		<version.minlog-slf4j>2.0</version.minlog-slf4j>
-		<version.janino>3.1.9</version.janino>
+		<version.janino>3.1.12</version.janino>
 		<version.joda-time>2.14.0</version.joda-time>
 		<version.commons-codec>1.22.0</version.commons-codec>
 		<version.commons-cli>1.5.0</version.commons-cli>
@@ -65,7 +65,7 @@
 		<version.jackson>2.22.1</version.jackson>
 		<version.jackson-annotations>2.22</version.jackson-annotations>
 		<version.jettison>1.5.4</version.jettison>
-		<version.jsoup>1.15.3</version.jsoup>
+		<version.jsoup>1.16.1</version.jsoup>
 		<version.args4j>2.37</version.args4j>
 		<version.shiro>1.13.0</version.shiro>
 		<version.jquery>3.6.1</version.jquery>
