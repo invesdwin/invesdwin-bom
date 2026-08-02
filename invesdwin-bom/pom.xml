@@ -2048,7 +2048,7 @@
 			<dependency>
 				<groupId>io.micronaut</groupId>
 				<artifactId>micronaut-http-client</artifactId>
-				<version>${vveresion.micronaut}</version>
+				<version>${version.micronaut}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
