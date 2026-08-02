@@ -2045,6 +2045,26 @@
 				<artifactId>snakeyaml</artifactId>
 				<version>${version.snakeyaml}</version>
 			</dependency>
+				<dependency>
+				<groupId>io.micronaut</groupId>
+				<artifactId>micronaut-core</artifactId>
+				<version>${version.micronaut}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micronaut</groupId>
+				<artifactId>micronaut-core-reactive</artifactId>
+				<version>${version.micronaut}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micronaut</groupId>
+				<artifactId>micronaut-inject</artifactId>
+				<version>${version.micronaut}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micronaut</groupId>
+				<artifactId>micronaut-http</artifactId>
+				<version>${version.micronaut}</version>
+			</dependency>
 			<dependency>
 				<groupId>io.micronaut</groupId>
 				<artifactId>micronaut-http-client</artifactId>
