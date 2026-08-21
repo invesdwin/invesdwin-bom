@@ -159,6 +159,7 @@
 		<version.agrona>2.5.0</version.agrona>
 		<version.arrow>19.0.0</version.arrow>
 		<version.burningwave-core>12.66.2</version.burningwave-core>
+		<version.burningwave-jvm-driver>8.20.1</version.burningwave-jvm-driver>
 		<version.jna>5.18.1</version.jna>
 		<version.jnr-constants>0.10.4</version.jnr-constants>
 		<version.jnr-ffi>2.2.17</version.jnr-ffi>
@@ -1886,6 +1887,11 @@
 				<version>${version.burningwave-core}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.burningwave</groupId>
+				<artifactId>jvm-driver</artifactId>
+				<version>${version.burningwave-jvm-driver}</version>
+			</dependency>
+			<dependency>
 				<groupId>net.java.dev.jna</groupId>
 				<artifactId>jna</artifactId>
 				<version>${version.jna}</version>
@@ -2045,7 +2051,7 @@
 				<artifactId>snakeyaml</artifactId>
 				<version>${version.snakeyaml}</version>
 			</dependency>
-				<dependency>
+			<dependency>
 				<groupId>io.micronaut</groupId>
 				<artifactId>micronaut-core</artifactId>
 				<version>${version.micronaut}</version>
