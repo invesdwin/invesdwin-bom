@@ -148,9 +148,9 @@
 		<version.nar-maven-plugin>3.10.1</version.nar-maven-plugin>
 		<version.os-maven-plugin>1.7.1</version.os-maven-plugin>
 		<version.jetty>11.0.26</version.jetty>
-		<version.netty>4.2.13.Final</version.netty>
-		<version.netty-io_uring>0.0.21.Final</version.netty-io_uring>
-		<version.netty-tcnative>2.0.61.Final</version.netty-tcnative>
+		<version.netty>4.2.19.Final</version.netty>
+		<version.netty-io_uring>0.0.26.Final</version.netty-io_uring>
+		<version.netty-tcnative>2.0.84.Final</version.netty-tcnative>
 		<version.chronicle-algorithms>2026.2</version.chronicle-algorithms>
 		<version.chronicle-bytes>2026.3</version.chronicle-bytes>
 		<version.chronicle-core>2026.3</version.chronicle-core>
@@ -1293,6 +1293,11 @@
 			</dependency>
 			<dependency>
 				<groupId>io.netty</groupId>
+				<artifactId>netty-all</artifactId>
+				<version>${version.netty}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
 				<artifactId>netty-common</artifactId>
 				<version>${version.netty}</version>
 			</dependency>
@@ -1352,6 +1357,12 @@
 				<groupId>io.netty</groupId>
 				<artifactId>netty-transport-native-kqueue</artifactId>
 				<classifier>osx-x86_64</classifier>
+				<version>${version.netty}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-transport-native-kqueue</artifactId>
+				<classifier>osx-aarch_64</classifier>
 				<version>${version.netty}</version>
 			</dependency>
 			<dependency>
@@ -1843,6 +1854,11 @@
 			<dependency>
 				<groupId>org.apache.arrow</groupId>
 				<artifactId>arrow-memory-netty</artifactId>
+				<version>${version.arrow}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.arrow</groupId>
+				<artifactId>arrow-memory-unsafe</artifactId>
 				<version>${version.arrow}</version>
 			</dependency>
 			<dependency>
