@@ -2811,6 +2811,60 @@
 			</build>
 		</profile>
 		<profile>
+			<id>checkstyle</id>
+			<activation>
+				<!-- use "mvn -Pcheckstyle verify" (or plain install with the
+				profile active) to run the Eclipse checkstyle rules via maven:
+				each module carries its generated config at
+				.settings/checkstyle.config.xml (written by
+				invesdwin-maven-plugin's InitializeMojo); the custom checks
+				(InternalImportCheck) come from invesdwin-checkstyle-plugin.
+				CLI-triggered only: run "mvn -o -Pcheckstyle
+				checkstyle:check" inside a module dir (aggregator/bom dirs
+				have no generated config and the check goal fails hard on a
+				missing one). Requires the edited bom installed, because
+				parents resolve from the repository (empty relativePath). -->
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<version>3.1.0</version>
+						<dependencies>
+							<!-- checkstyle pinned to 8.25:
+							invesdwin-checkstyle-plugin 1.0.4 compiles against
+							that API; newer checkstyles break it with
+							"DetailAST class/interface was expected" -->
+							<dependency>
+								<groupId>com.puppycrawl.tools</groupId>
+								<artifactId>checkstyle</artifactId>
+								<version>8.25</version>
+							</dependency>
+							<dependency>
+								<groupId>de.invesdwin</groupId>
+								<artifactId>invesdwin-checkstyle-plugin</artifactId>
+								<version>1.0.4</version>
+							</dependency>
+						</dependencies>
+						<configuration>
+							<configLocation>${basedir}/.settings/checkstyle.config.xml</configLocation>
+							<propertyExpansion>config_loc=${basedir}/.settings</propertyExpansion>
+							<inputEncoding>UTF-8</inputEncoding>
+							<includeTestSourceDirectory>true</includeTestSourceDirectory>
+							<includeResources>false</includeResources>
+							<includeTestResources>false</includeTestResources>
+							<linkXRef>false</linkXRef>
+							<consoleOutput>true</consoleOutput>
+							<failsOnError>false</failsOnError>
+							<violationSeverity>error</violationSeverity>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
 			<id>jenkins</id>
 			<activation>
 				<property>
