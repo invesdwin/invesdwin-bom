@@ -13,6 +13,12 @@
 		</license>
 	</licenses>
 	<properties>
+		<!-- surefire pass-through knobs: define here so that ${argLine} and
+		${forkedProcessTimeoutInSeconds} in pluginManagement below always resolve;
+		both can be overridden on the command line, e.g.
+		mvn -DargLine="-Dfoo=bar" test or mvn -DforkedProcessTimeoutInSeconds=3600 test -->
+		<argLine />
+		<forkedProcessTimeoutInSeconds>1800</forkedProcessTimeoutInSeconds>
 		<version.guava>33.6.0-jre</version.guava>
 		<version.j2objc-annotations>3.1</version.j2objc-annotations>
 		<version.error_prone_annotations>2.50.0</version.error_prone_annotations>
@@ -2689,9 +2695,13 @@
 						<reuseForks>true</reuseForks>
 						<!-- <parallel>suitesAndClasses</parallel>
 						<threadCount>1</threadCount> -->
+						<!-- extra JVM arguments for the forked test JVM, set via
+						-DargLine=... on the command line -->
+						<argLine>${argLine}</argLine>
 						<!-- timeout test suite of any module if it takes longer
-						than 30 minutes -->
-						<forkedProcessTimeoutInSeconds>1800</forkedProcessTimeoutInSeconds>
+						than 30 minutes (override via
+						-DforkedProcessTimeoutInSeconds=... on the command line) -->
+						<forkedProcessTimeoutInSeconds>${forkedProcessTimeoutInSeconds}</forkedProcessTimeoutInSeconds>
 						<!-- Assertions make jforex fail in unit tests even if
 						they normally should not fail. To be safe about this
 						regarding any framework, assertions are disabled by
